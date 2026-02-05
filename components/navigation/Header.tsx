@@ -40,71 +40,63 @@ export const Header = () => {
         className={cn(
           "fixed top-0 left-0 right-0 z-40 transition-all duration-500",
           isScrolled
-            ? "bg-white/98 backdrop-blur-xl shadow-lg shadow-black/5 border-b border-neutral-200/50"
+            ? "bg-[#29525E] shadow-lg"
             : "bg-transparent"
         )}
       >
-        <nav className="container mx-auto px-6 py-5 flex items-center justify-between">
+        <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
           <Link 
             href="/" 
-            className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-[#FA5C40] to-[#e54a2e] bg-clip-text text-transparent hover:from-[#e54a2e] hover:to-[#FA5C40] transition-all duration-300"
+            className="text-xl md:text-2xl font-bold text-white relative group"
           >
             Premium
+            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-[#FA5C40] transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-1">
+          <div className="hidden md:flex items-center gap-2">
             <Link
               href="/"
               className={cn(
-                "px-4 py-2 rounded-lg text-neutral-700 hover:text-[#FA5C40] transition-all duration-300 font-medium relative group",
-                isScrolled ? "hover:bg-neutral-100" : "hover:bg-white/10"
+                "px-4 py-2 text-sm font-medium transition-colors duration-300",
+                isScrolled ? "text-white/90 hover:text-white" : "text-white/80 hover:text-white"
               )}
             >
               Home
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#FA5C40] group-hover:w-full transition-all duration-300" />
             </Link>
             <Link
               href="/products"
               className={cn(
-                "px-4 py-2 rounded-lg text-neutral-700 hover:text-[#FA5C40] transition-all duration-300 font-medium relative group",
-                isScrolled ? "hover:bg-neutral-100" : "hover:bg-white/10"
+                "px-4 py-2 text-sm font-medium transition-colors duration-300",
+                isScrolled ? "text-white/90 hover:text-white" : "text-white/80 hover:text-white"
               )}
             >
               Products
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#FA5C40] group-hover:w-full transition-all duration-300" />
             </Link>
             <Link
               href="/about"
               className={cn(
-                "px-4 py-2 rounded-lg text-neutral-700 hover:text-[#FA5C40] transition-all duration-300 font-medium relative group",
-                isScrolled ? "hover:bg-neutral-100" : "hover:bg-white/10"
+                "px-4 py-2 text-sm font-medium transition-colors duration-300",
+                isScrolled ? "text-white/90 hover:text-white" : "text-white/80 hover:text-white"
               )}
             >
               About
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#FA5C40] group-hover:w-full transition-all duration-300" />
             </Link>
             <Link
               href="/contact"
               className={cn(
-                "px-4 py-2 rounded-lg text-neutral-700 hover:text-[#FA5C40] transition-all duration-300 font-medium relative group",
-                isScrolled ? "hover:bg-neutral-100" : "hover:bg-white/10"
+                "px-4 py-2 text-sm font-medium transition-colors duration-300",
+                isScrolled ? "text-white/90 hover:text-white" : "text-white/80 hover:text-white"
               )}
             >
               Contact
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#FA5C40] group-hover:w-full transition-all duration-300" />
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(true)}
-            className={cn(
-              "md:hidden p-2 rounded-lg transition-all duration-300",
-              isScrolled 
-                ? "text-neutral-700 hover:text-[#FA5C40] hover:bg-neutral-100" 
-                : "text-white hover:text-[#FA5C40] hover:bg-white/10"
-            )}
+            className="md:hidden p-2 text-white hover:text-[#FA5C40] transition-colors"
             aria-label="Open menu"
           >
             <Menu className="w-6 h-6" />

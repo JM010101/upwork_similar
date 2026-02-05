@@ -56,36 +56,25 @@ export const ProductShowcase: React.FC<ProductShowcaseProps> = ({
   products = defaultProducts,
 }) => {
   return (
-    <section id="products" className="py-32 bg-gradient-to-b from-white via-neutral-50 to-white relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-        <div className="absolute top-20 right-0 w-96 h-96 bg-[#FA5C40]/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 left-0 w-96 h-96 bg-[#29525E]/5 rounded-full blur-3xl" />
-      </div>
-
+    <section id="products" className="py-24 bg-white relative overflow-hidden">
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeInUp}
-          className="text-center mb-20"
+          className="text-center mb-16"
         >
           <motion.p
             variants={fadeInUp}
-            className="inline-block text-[#FA5C40] font-semibold text-base md:text-lg uppercase tracking-wider mb-6 px-4 py-2 bg-[#FA5C40]/10 rounded-full"
+            className="inline-block text-[#FA5C40] font-semibold text-xs md:text-sm uppercase tracking-[0.15em] mb-6"
           >
             {subtitle}
           </motion.p>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 leading-tight">
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-4 leading-tight">
             {title}
           </h2>
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="w-16 h-1 bg-gradient-to-r from-transparent to-[#FA5C40]" />
-            <div className="w-2 h-2 bg-[#FA5C40] rounded-full" />
-            <div className="w-16 h-1 bg-gradient-to-l from-transparent to-[#FA5C40]" />
-          </div>
-          <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-neutral-600 max-w-2xl mx-auto">
             Discover our curated collection of premium products designed for excellence
           </p>
         </motion.div>
@@ -100,9 +89,9 @@ export const ProductShowcase: React.FC<ProductShowcaseProps> = ({
           {products.map((product, index) => (
             <motion.div key={product.id} variants={fadeInUp}>
               <Card className="h-full flex flex-col group border border-neutral-200/50 hover:border-[#FA5C40]/30 transition-all duration-500">
-                <div className="relative h-72 w-full overflow-hidden bg-gradient-to-br from-neutral-100 to-neutral-200">
+                <div className="relative h-80 w-full overflow-hidden bg-white">
                   <motion.div
-                    whileHover={{ scale: 1.1 }}
+                    whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.5 }}
                     className="absolute inset-0"
                   >
@@ -113,26 +102,32 @@ export const ProductShowcase: React.FC<ProductShowcaseProps> = ({
                       className="object-cover"
                     />
                   </motion.div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   {product.price && (
-                    <div className="absolute top-4 right-4 px-3 py-1 bg-white/90 backdrop-blur-sm rounded-full text-[#FA5C40] font-bold text-sm shadow-lg">
-                      {product.price}
+                    <div className="absolute top-5 right-5">
+                      <div className="relative">
+                        <div className="absolute inset-0 bg-white rounded-lg transform rotate-3 opacity-20" />
+                        <div className="relative px-4 py-2 bg-white rounded-lg shadow-xl border border-neutral-200">
+                          <span className="text-[#FA5C40] font-bold text-lg">{product.price}</span>
+                          {/* Speech bubble tail */}
+                          <div className="absolute -bottom-2 right-6 w-4 h-4 bg-white border-r border-b border-neutral-200 transform rotate-45" />
+                        </div>
+                      </div>
                     </div>
                   )}
                 </div>
-                <div className="p-8 flex flex-col flex-grow bg-white">
-                  <h3 className="text-2xl font-bold text-neutral-900 mb-3 group-hover:text-[#FA5C40] transition-colors">
+                <div className="p-6 flex flex-col flex-grow bg-white">
+                  <h3 className="text-xl md:text-2xl font-bold text-neutral-900 mb-3 group-hover:text-[#FA5C40] transition-colors">
                     {product.name}
                   </h3>
-                  <p className="text-neutral-600 mb-6 flex-grow leading-relaxed">
+                  <p className="text-neutral-600 mb-5 flex-grow leading-relaxed text-sm md:text-base">
                     {product.description}
                   </p>
                   
                   {product.features && (
-                    <ul className="mb-6 space-y-3">
+                    <ul className="mb-5 space-y-2.5">
                       {product.features.map((feature, idx) => (
                         <li key={idx} className="flex items-center text-sm text-neutral-600">
-                          <span className="w-1.5 h-1.5 bg-[#FA5C40] rounded-full mr-3 flex-shrink-0" />
+                          <span className="w-1.5 h-1.5 bg-[#FA5C40] rounded-full mr-2.5 flex-shrink-0" />
                           <span>{feature}</span>
                         </li>
                       ))}
@@ -142,7 +137,7 @@ export const ProductShowcase: React.FC<ProductShowcaseProps> = ({
                   <div className="flex items-center justify-between mt-auto pt-6 border-t border-neutral-200">
                     <Link 
                       href={`/products/${product.id}`}
-                      className="group/link flex items-center gap-2 text-[#FA5C40] font-semibold hover:gap-3 transition-all"
+                      className="group/link flex items-center gap-2 text-[#FA5C40] font-semibold text-base hover:gap-3 transition-all"
                     >
                       Learn More
                       <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />

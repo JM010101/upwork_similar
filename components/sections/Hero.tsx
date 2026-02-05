@@ -27,8 +27,8 @@ export const Hero: React.FC<HeroProps> = ({
   ctaLink = "/products",
 }) => {
   return (
-    <section className="relative h-screen w-full overflow-hidden flex items-center justify-center">
-      {/* Background Media */}
+    <section className="relative h-screen w-full overflow-hidden flex items-center justify-center bg-black">
+      {/* Dark background with subtle orange glow */}
       <div className="absolute inset-0 z-0">
         {videoUrl ? (
           <video
@@ -36,34 +36,30 @@ export const Hero: React.FC<HeroProps> = ({
             loop
             muted
             playsInline
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover opacity-30"
           >
             <source src={videoUrl} type="video/mp4" />
           </video>
         ) : (
-          <div className="w-full h-full bg-gradient-to-br from-[#29525E] via-[#1e3d46] to-[#0f2529]">
+          <div className="w-full h-full bg-black">
             {imageUrl ? (
               <Image
                 src={imageUrl}
                 alt="Hero background"
                 fill
-                className="object-cover opacity-70"
+                className="object-cover opacity-20"
                 priority
               />
-            ) : (
-              <div className="w-full h-full bg-gradient-to-br from-[#29525E] via-[#1e3d46] to-[#0f2529]" />
-            )}
+            ) : null}
           </div>
         )}
-        {/* Enhanced overlay with gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,transparent_0%,rgba(0,0,0,0.3)_100%)]" />
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/80" />
       </div>
 
-      {/* Decorative elements */}
+      {/* Subtle orange glow from left */}
       <div className="absolute inset-0 z-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-[#FA5C40]/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#29525E]/20 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-0 w-[600px] h-[600px] bg-[#FA5C40]/5 rounded-full blur-3xl -translate-y-1/2" />
       </div>
 
       {/* Content */}
@@ -79,10 +75,10 @@ export const Hero: React.FC<HeroProps> = ({
             initial="hidden"
             animate="visible"
             transition={{ delay: 0.2 }}
-            className="inline-block mb-6"
+            className="inline-block mb-8"
           >
-            <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#FA5C40]/20 backdrop-blur-sm border border-[#FA5C40]/30 rounded-full text-[#FA5C40] font-semibold text-sm md:text-base uppercase tracking-wider">
-              <span className="w-2 h-2 bg-[#FA5C40] rounded-full animate-pulse" />
+            <span className="inline-flex items-center gap-2 px-5 py-2.5 bg-black/40 backdrop-blur-md border border-[#FA5C40]/40 rounded-lg text-white font-semibold text-xs md:text-sm uppercase tracking-[0.15em]">
+              <span className="w-1.5 h-1.5 bg-[#FA5C40] rounded-full" />
               {subtitle}
             </span>
           </motion.div>
@@ -92,12 +88,9 @@ export const Hero: React.FC<HeroProps> = ({
             initial="hidden"
             animate="visible"
             transition={{ delay: 0.3 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-[1.1] tracking-tight"
+            className="text-6xl md:text-8xl lg:text-9xl font-bold text-white mb-8 leading-[0.95] tracking-[-0.02em]"
           >
-            <span className="block mb-2">{title}</span>
-            <span className="block bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent">
-              {title}
-            </span>
+            {title}
           </motion.h1>
           
           <motion.p
@@ -105,7 +98,7 @@ export const Hero: React.FC<HeroProps> = ({
             initial="hidden"
             animate="visible"
             transition={{ delay: 0.5 }}
-            className="text-lg md:text-xl lg:text-2xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed"
+            className="text-base md:text-lg lg:text-xl text-white/80 mb-12 max-w-2xl mx-auto leading-relaxed font-light"
           >
             {description}
           </motion.p>
@@ -118,12 +111,12 @@ export const Hero: React.FC<HeroProps> = ({
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             <Link href={ctaLink}>
-              <Button size="lg" variant="primary" className="shadow-lg shadow-[#FA5C40]/30 hover:shadow-[#FA5C40]/50">
+              <Button size="lg" variant="primary" className="px-8 py-4 text-base font-semibold rounded-lg">
                 {ctaText}
               </Button>
             </Link>
             <Link href="/about">
-              <Button size="lg" variant="outline" className="bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white hover:bg-white hover:text-[#FA5C40] hover:border-white">
+              <Button size="lg" variant="outline" className="px-8 py-4 text-base font-semibold rounded-lg bg-transparent border border-white/20 text-white hover:bg-white/10 hover:border-white/40">
                 Learn More
               </Button>
             </Link>
