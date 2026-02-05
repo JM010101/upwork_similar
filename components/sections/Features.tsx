@@ -35,22 +35,38 @@ const features: Feature[] = [
 
 export const Features: React.FC = () => {
   return (
-    <section id="features" className="py-24 bg-white">
-      <div className="container mx-auto px-6">
+    <section id="features" className="py-32 bg-white relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#FA5C40]/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#29525E]/5 rounded-full blur-3xl" />
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeInUp}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <p className="text-[#FA5C40] font-semibold text-lg uppercase tracking-wider mb-4">
+          <motion.p
+            variants={fadeInUp}
+            className="inline-block text-[#FA5C40] font-semibold text-base md:text-lg uppercase tracking-wider mb-6 px-4 py-2 bg-[#FA5C40]/10 rounded-full"
+          >
             Why Choose Us
-          </p>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-4">
+          </motion.p>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 leading-tight">
             Exceptional Features
           </h2>
-          <div className="w-24 h-1 bg-[#FA5C40] mx-auto" />
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <div className="w-16 h-1 bg-gradient-to-r from-transparent to-[#FA5C40]" />
+            <div className="w-2 h-2 bg-[#FA5C40] rounded-full" />
+            <div className="w-16 h-1 bg-gradient-to-l from-transparent to-[#FA5C40]" />
+          </div>
+          <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+            Experience the difference with our premium features designed for excellence
+          </p>
         </motion.div>
 
         <motion.div
@@ -64,15 +80,20 @@ export const Features: React.FC = () => {
             <motion.div
               key={index}
               variants={fadeInUp}
-              className="text-center p-6 rounded-xl hover:bg-neutral-50 transition-colors"
+              whileHover={{ y: -8 }}
+              className="group text-center p-8 rounded-2xl bg-gradient-to-br from-white to-neutral-50/50 border border-neutral-200/50 hover:border-[#FA5C40]/30 hover:shadow-xl transition-all duration-300"
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#FA5C40]/10 text-[#FA5C40] mb-4">
+              <motion.div
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                transition={{ type: "spring", stiffness: 300 }}
+                className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-[#FA5C40]/10 to-[#FA5C40]/5 text-[#FA5C40] mb-6 group-hover:from-[#FA5C40]/20 group-hover:to-[#FA5C40]/10 transition-all duration-300"
+              >
                 {feature.icon}
-              </div>
-              <h3 className="text-xl font-bold text-neutral-900 mb-2">
+              </motion.div>
+              <h3 className="text-xl font-bold text-neutral-900 mb-3 group-hover:text-[#FA5C40] transition-colors">
                 {feature.title}
               </h3>
-              <p className="text-neutral-600">
+              <p className="text-neutral-600 leading-relaxed">
                 {feature.description}
               </p>
             </motion.div>

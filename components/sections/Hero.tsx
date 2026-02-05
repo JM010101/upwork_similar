@@ -41,21 +41,29 @@ export const Hero: React.FC<HeroProps> = ({
             <source src={videoUrl} type="video/mp4" />
           </video>
         ) : (
-          <div className="w-full h-full bg-gradient-to-br from-[#29525E] to-[#1e3d46]">
+          <div className="w-full h-full bg-gradient-to-br from-[#29525E] via-[#1e3d46] to-[#0f2529]">
             {imageUrl ? (
               <Image
                 src={imageUrl}
                 alt="Hero background"
                 fill
-                className="object-cover opacity-80"
+                className="object-cover opacity-70"
                 priority
               />
             ) : (
-              <div className="w-full h-full bg-gradient-to-br from-[#29525E] via-[#29525E] to-[#1e3d46]" />
+              <div className="w-full h-full bg-gradient-to-br from-[#29525E] via-[#1e3d46] to-[#0f2529]" />
             )}
           </div>
         )}
-        <div className="absolute inset-0 bg-black/40" />
+        {/* Enhanced overlay with gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,transparent_0%,rgba(0,0,0,0.3)_100%)]" />
+      </div>
+
+      {/* Decorative elements */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-[#FA5C40]/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#29525E]/20 rounded-full blur-3xl" />
       </div>
 
       {/* Content */}
@@ -64,26 +72,32 @@ export const Hero: React.FC<HeroProps> = ({
           variants={fadeInUp}
           initial="hidden"
           animate="visible"
-          className="max-w-4xl mx-auto"
+          className="max-w-5xl mx-auto"
         >
-          <motion.p
+          <motion.div
             variants={fadeIn}
             initial="hidden"
             animate="visible"
             transition={{ delay: 0.2 }}
-            className="text-[#FA5C40] font-semibold text-lg md:text-xl mb-4 uppercase tracking-wider"
+            className="inline-block mb-6"
           >
-            {subtitle}
-          </motion.p>
+            <span className="inline-flex items-center gap-2 px-4 py-2 bg-[#FA5C40]/20 backdrop-blur-sm border border-[#FA5C40]/30 rounded-full text-[#FA5C40] font-semibold text-sm md:text-base uppercase tracking-wider">
+              <span className="w-2 h-2 bg-[#FA5C40] rounded-full animate-pulse" />
+              {subtitle}
+            </span>
+          </motion.div>
           
           <motion.h1
             variants={fadeInUp}
             initial="hidden"
             animate="visible"
             transition={{ delay: 0.3 }}
-            className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight"
+            className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-[1.1] tracking-tight"
           >
-            {title}
+            <span className="block mb-2">{title}</span>
+            <span className="block bg-gradient-to-r from-white via-white/90 to-white/70 bg-clip-text text-transparent">
+              {title}
+            </span>
           </motion.h1>
           
           <motion.p
@@ -91,7 +105,7 @@ export const Hero: React.FC<HeroProps> = ({
             initial="hidden"
             animate="visible"
             transition={{ delay: 0.5 }}
-            className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto"
+            className="text-lg md:text-xl lg:text-2xl text-white/90 mb-10 max-w-3xl mx-auto leading-relaxed"
           >
             {description}
           </motion.p>
@@ -104,12 +118,12 @@ export const Hero: React.FC<HeroProps> = ({
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             <Link href={ctaLink}>
-              <Button size="lg" variant="primary">
+              <Button size="lg" variant="primary" className="shadow-lg shadow-[#FA5C40]/30 hover:shadow-[#FA5C40]/50">
                 {ctaText}
               </Button>
             </Link>
             <Link href="/about">
-              <Button size="lg" variant="outline" className="bg-white/10 border-white text-white hover:bg-white hover:text-[#FA5C40]">
+              <Button size="lg" variant="outline" className="bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white hover:bg-white hover:text-[#FA5C40] hover:border-white">
                 Learn More
               </Button>
             </Link>
