@@ -20,7 +20,7 @@ export const ContactCTA: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-transparent" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10 pt-16">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 pt-12 md:pt-16">
         <motion.div
           initial="hidden"
           whileInView="visible"
@@ -30,17 +30,17 @@ export const ContactCTA: React.FC = () => {
         >
           <motion.p
             variants={fadeInUp}
-            className="inline-block mb-6 px-5 py-2.5 bg-[#FA5C40] rounded-lg border border-white/20 text-white font-semibold text-xs md:text-sm uppercase tracking-wider"
+            className="inline-block mb-4 md:mb-6 px-5 py-2.5 bg-[#FA5C40] rounded-lg border border-white/20 text-white font-semibold text-xs md:text-sm uppercase tracking-wider"
           >
             Let's Connect
           </motion.p>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 md:mb-6 leading-tight">
             Ready to Get Started?
           </h2>
-          <p className="text-lg md:text-xl text-white/90 mb-4 leading-relaxed">
+          <p className="text-base md:text-lg lg:text-xl text-white/90 mb-3 md:mb-4 leading-relaxed">
             Join thousands of satisfied customers who have chosen excellence.
           </p>
-          <p className="text-lg md:text-xl text-white/90 mb-12 leading-relaxed">
+          <p className="text-base md:text-lg lg:text-xl text-white/90 mb-8 md:mb-12 leading-relaxed">
             Get in touch with us today and discover what we can do for you.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

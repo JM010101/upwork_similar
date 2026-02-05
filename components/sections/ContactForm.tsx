@@ -59,8 +59,8 @@ export const ContactForm: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-white">
-      <div className="container mx-auto px-6">
+    <section id="contact" className="py-16 md:py-20 lg:py-24 bg-white">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial="hidden"
           whileInView="visible"

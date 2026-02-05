@@ -44,7 +44,7 @@ export const Header = () => {
             : "bg-transparent"
         )}
       >
-        <nav className="container mx-auto px-6 py-4 flex items-center justify-between">
+        <nav className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
           <Link 
             href="/" 
             className="text-xl md:text-2xl font-bold text-white relative group"

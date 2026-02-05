@@ -35,7 +35,7 @@ export const Footer = () => {
 
   return (
     <footer className="bg-neutral-900 text-white">
-      <div className="container mx-auto px-6 py-16">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-12">
           {/* Brand */}
           <motion.div

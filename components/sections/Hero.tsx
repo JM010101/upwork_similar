@@ -63,7 +63,7 @@ export const Hero: React.FC<HeroProps> = ({
       </div>
 
       {/* Content */}
-      <div className="relative z-10 container mx-auto px-6 text-center">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <motion.div
           variants={fadeInUp}
           initial="hidden"

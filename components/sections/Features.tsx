@@ -35,36 +35,31 @@ const features: Feature[] = [
 
 export const Features: React.FC = () => {
   return (
-    <section id="features" className="py-32 bg-white relative overflow-hidden">
+    <section id="features" className="py-16 md:py-20 lg:py-24 bg-white relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-[#FA5C40]/5 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#29525E]/5 rounded-full blur-3xl" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeInUp}
-          className="text-center mb-20"
+          className="text-center mb-12 md:mb-16 lg:mb-20"
         >
           <motion.p
             variants={fadeInUp}
-            className="inline-block text-[#FA5C40] font-semibold text-base md:text-lg uppercase tracking-wider mb-6 px-4 py-2 bg-[#FA5C40]/10 rounded-full"
+            className="inline-block text-[#FA5C40] font-semibold text-xs md:text-sm uppercase tracking-wider mb-4 md:mb-6"
           >
             Why Choose Us
           </motion.p>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-6 leading-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-neutral-900 mb-4 md:mb-6 leading-tight">
             Exceptional Features
           </h2>
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="w-16 h-1 bg-gradient-to-r from-transparent to-[#FA5C40]" />
-            <div className="w-2 h-2 bg-[#FA5C40] rounded-full" />
-            <div className="w-16 h-1 bg-gradient-to-l from-transparent to-[#FA5C40]" />
-          </div>
-          <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+          <p className="text-sm md:text-base lg:text-lg text-neutral-600 max-w-2xl mx-auto">
             Experience the difference with our premium features designed for excellence
           </p>
         </motion.div>
@@ -74,7 +69,7 @@ export const Features: React.FC = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
         >
           {features.map((feature, index) => (
             <motion.div

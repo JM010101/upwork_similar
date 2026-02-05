@@ -56,25 +56,25 @@ export const ProductShowcase: React.FC<ProductShowcaseProps> = ({
   products = defaultProducts,
 }) => {
   return (
-    <section id="products" className="py-24 bg-white relative overflow-hidden">
-      <div className="container mx-auto px-6 relative z-10">
+    <section id="products" className="py-16 md:py-20 lg:py-24 bg-white relative overflow-hidden">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeInUp}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
           <motion.p
             variants={fadeInUp}
-            className="inline-block text-[#FA5C40] font-semibold text-xs md:text-sm uppercase tracking-[0.15em] mb-6"
+            className="inline-block text-[#FA5C40] font-semibold text-xs md:text-sm uppercase tracking-[0.15em] mb-4 md:mb-6"
           >
             {subtitle}
           </motion.p>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-neutral-900 mb-4 leading-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-neutral-900 mb-3 md:mb-4 leading-tight">
             {title}
           </h2>
-          <p className="text-base md:text-lg text-neutral-600 max-w-2xl mx-auto">
+          <p className="text-sm md:text-base lg:text-lg text-neutral-600 max-w-2xl mx-auto">
             Discover our curated collection of premium products designed for excellence
           </p>
         </motion.div>
@@ -84,7 +84,7 @@ export const ProductShowcase: React.FC<ProductShowcaseProps> = ({
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 lg:gap-10"
         >
           {products.map((product, index) => (
             <motion.div key={product.id} variants={fadeInUp}>
