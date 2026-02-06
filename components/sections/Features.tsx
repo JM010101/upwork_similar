@@ -76,19 +76,19 @@ export const Features: React.FC = () => {
               key={index}
               variants={fadeInUp}
               whileHover={{ y: -8 }}
-              className="group text-center p-8 rounded-2xl bg-gradient-to-br from-white to-neutral-50/50 border border-neutral-200/50 hover:border-[#FA5C40]/30 hover:shadow-xl transition-all duration-300"
+              className="group text-center p-6 md:p-8 rounded-2xl bg-gradient-to-br from-white to-neutral-50/50 border border-neutral-200/50 hover:border-[#FA5C40]/30 hover:shadow-xl transition-all duration-300"
             >
               <motion.div
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 transition={{ type: "spring", stiffness: 300 }}
-                className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-[#FA5C40]/10 to-[#FA5C40]/5 text-[#FA5C40] mb-6 group-hover:from-[#FA5C40]/20 group-hover:to-[#FA5C40]/10 transition-all duration-300"
+                className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-[#FA5C40]/10 to-[#FA5C40]/5 text-[#FA5C40] mb-4 md:mb-6 group-hover:from-[#FA5C40]/20 group-hover:to-[#FA5C40]/10 transition-all duration-300"
               >
                 {feature.icon}
               </motion.div>
-              <h3 className="text-xl font-bold text-neutral-900 mb-3 group-hover:text-[#FA5C40] transition-colors">
+              <h3 className="text-lg md:text-xl font-bold text-neutral-900 mb-2 md:mb-3 group-hover:text-[#FA5C40] transition-colors">
                 {feature.title}
               </h3>
-              <p className="text-neutral-600 leading-relaxed">
+              <p className="text-sm md:text-base text-neutral-600 leading-relaxed">
                 {feature.description}
               </p>
             </motion.div>

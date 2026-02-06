@@ -12,10 +12,8 @@ export default function ContactPage() {
   return (
     <>
       <Header />
-      <main>
-        <div className="pt-24">
-          <ContactForm />
-        </div>
+      <main className="pt-20 md:pt-24">
+        <ContactForm />
         <ContactCTA />
       </main>
     </>

@@ -154,7 +154,7 @@ export const ProductShowcase: React.FC<ProductShowcaseProps> = ({
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeInUp}
-          className="text-center mt-16"
+          className="text-center mt-12 md:mt-16"
         >
           <Link href="/products">
             <Button size="lg" variant="primary" className="shadow-lg shadow-[#FA5C40]/30 hover:shadow-[#FA5C40]/50">
