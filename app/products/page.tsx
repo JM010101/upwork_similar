@@ -12,10 +12,8 @@ export default function ProductsPage() {
   return (
     <>
       <Header />
-      <main>
-        <div className="pt-24">
-          <ProductShowcase />
-        </div>
+      <main className="pt-20 md:pt-24">
+        <ProductShowcase />
         <ContactCTA />
       </main>
     </>

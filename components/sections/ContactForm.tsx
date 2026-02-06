@@ -68,20 +68,20 @@ export const ContactForm: React.FC = () => {
           variants={fadeInUp}
           className="max-w-2xl mx-auto"
         >
-          <div className="text-center mb-12">
-            <p className="text-[#FA5C40] font-semibold text-lg uppercase tracking-wider mb-4">
+          <div className="text-center mb-10 md:mb-12">
+            <p className="text-[#FA5C40] font-semibold text-xs md:text-sm uppercase tracking-[0.15em] mb-4 md:mb-6">
               Get In Touch
             </p>
-            <h2 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-4">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-neutral-900 mb-3 md:mb-4 leading-tight">
               Contact Us
             </h2>
-            <div className="w-24 h-1 bg-[#FA5C40] mx-auto mb-4" />
-            <p className="text-lg text-neutral-600">
+            <div className="w-16 md:w-24 h-1 bg-[#FA5C40] mx-auto mb-4 md:mb-6" />
+            <p className="text-base md:text-lg text-neutral-600 leading-relaxed">
               Have a question or want to learn more? We'd love to hear from you.
             </p>
           </div>
 
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+          <form onSubmit={handleSubmit(onSubmit)} className="space-y-5 md:space-y-6">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-neutral-700 mb-2">
                 Name *
